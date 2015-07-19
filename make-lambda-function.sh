@@ -32,7 +32,7 @@ make distclean
 
 # install libfdk_aac
 cd $CURR_DIR/ffmpeg_sources
-git clone --depth 1 git://git.code.sf.net/p/opencore-amr/fdk-aac
+git clone --depth 1 https://github.com/Distrotech/fdk-aac.git
 cd fdk-aac
 autoreconf -fiv
 ./configure --prefix="$CURR_DIR/ffmpeg_build" --disable-shared
@@ -42,9 +42,8 @@ make distclean
 
 # install libmp3lame
 cd $CURR_DIR/ffmpeg_sources
-curl -L -O http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
-tar xzvf lame-3.99.5.tar.gz
-cd lame-3.99.5
+https://github.com/rbrito/lame.git
+cd lame
 ./configure --prefix="$CURR_DIR/ffmpeg_build" --bindir="$CURR_DIR/bin" --disable-shared --enable-nasm
 make
 make install
@@ -72,9 +71,9 @@ make distclean
 
 # install libvorbis
 cd $CURR_DIR/ffmpeg_sources
-curl -O http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.4.tar.gz
-tar xzvf libvorbis-1.3.4.tar.gz
-cd libvorbis-1.3.4
+curl -O http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.5.tar.gz
+tar xzvf libvorbis-1.3.5.tar.gz
+cd libvorbis-1.3.5
 ./configure --prefix="$CURR_DIR/ffmpeg_build" --with-ogg="$CURR_DIR/ffmpeg_build" --disable-shared
 make
 make install
